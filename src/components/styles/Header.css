@@ -1,0 +1,17 @@
+.Header {
+	font-size: 1.5em;
+	width: 100%;
+	background-color: #2b2926;
+	color: #e8e9ed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin-bottom: 2%;
+}
+
+.ui.huge.header {
+	color: white;
+	text-align: center;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
