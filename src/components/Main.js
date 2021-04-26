@@ -11,7 +11,7 @@ class Main extends Component {
 
    render(){
        return(
-        <ResumeForm onSubmit={this.onSubmitTask} />
+        <ResumeForm />
        )
      
    }
