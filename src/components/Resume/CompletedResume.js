@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import  '../styles/CompletedResume.css'
 
 class CompletedResume extends Component {
     constructor(props){
@@ -7,27 +8,46 @@ class CompletedResume extends Component {
     }
     render(){
         
-        return(<div>
+        return(
+        <div className='CompletedResume effect'>
                 <div className="generalInfo">
-                    <h1>{this.props.firstName} {this.props.lastName}</h1>
-                    <p>{this.props.email}</p>
-                    <p>{this.props.tel}</p>
+                    <h1 className='header'>{this.props.firstName} {this.props.lastName}</h1>
+                    <div className="emailTel">
+                        <p>{this.props.email}</p>
+                        <p>{this.props.tel}</p>
+                    </div>
                 </div>
-                <div className="workExperience">
-                    <h2>Work Experience</h2>
+                <hr/>
+                <div className="sectionTitle workExperience">
+                    <h2>Experience</h2>
+                    <hr/>
+                    <div className="section">
                     <p>{this.props.companyName}</p>
-                    <p>{this.props.startDate}</p>
-                    <p>{this.props.endDate}</p>
+                        <div className="test">
+                            <p>{this.props.startDate}</p>
+                            <p>{this.props.endDate}</p>
+                        </div>
+                        </div>
                     <p>{this.props.jobTitle}</p>
+
+                    
+                    
                 </div>
-                <div className="education">
+               <div className="sectionTitle education">
                     <h2>Education</h2>
+                    <hr/>
+                  <div className="section">
                     <p>{this.props.universityName}</p>
+                    <div className="test">
                     <p>{this.props.collegeStartDate}</p>
                     <p>{this.props.collegeEndDate}</p>
+                    </div>
+                    </div>
                     <p>{this.props.degree}</p>
+                  
                 </div>
-            </div>)
+        </div>
+        )
     }
 }
 export default CompletedResume

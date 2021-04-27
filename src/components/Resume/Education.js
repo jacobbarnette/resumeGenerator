@@ -22,8 +22,8 @@ class Education extends Component {
                 <div className="field">
                     <label htmlFor=""> 
                         <input 
-                         onChange={this.props.onChange}
-                         value={this.props.collegeStartDate}
+                        onChange={this.props.onChange}
+                        value={this.props.collegeStartDate}
                         type="date" 
                         name='collegeStartDate'/>
                     </label>
@@ -31,9 +31,8 @@ class Education extends Component {
                 <div className="field">
                     <label htmlFor="">
                         <input 
-                         onChange={this.props.onChange}
-                         value={this.props.collegheEndDate}
-                       
+                        onChange={this.props.onChange}
+                        value={this.props.collegheEndDate}
                         type="date"
                         name='collegeEndDate'/>
                     </label>
@@ -41,8 +40,8 @@ class Education extends Component {
                 <div className="field">
                     <label htmlFor="">
                         <input 
-                         onChange={this.props.onChange}
-                         value={this.props.degree}
+                        onChange={this.props.onChange}
+                        value={this.props.degree}
                         placeholder='Degree earned'
                         type="text"
                         name='degree'/>
