@@ -6,7 +6,7 @@ class AddInfoBtn extends Component {
     }
     render(){
         return(
-            <button onClick={this.props.onClick} className="ui primary button">{this.props.sectionTitle}</button>
+            <button onClick={this.props.onClick} className="ui primary button">Add {this.props.sectionTitle}</button>
         )
     }
 }

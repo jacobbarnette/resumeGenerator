@@ -62,5 +62,6 @@ hr {
 	grid-template-columns: repeat(2, 1fr);
 	text-align: right;
 	position: absolute;
-	left: 25em;
+	right: 0em;
+	left: 35em;
 }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import nextId from "react-id-generator";
 import GeneralInfo from './GeneralInfo'
 import WorkExperience from './WorkExperience'
 import Education from './Education'
 import Button from './Button'
 import CompletedResume from './CompletedResume'
+
 
 class ResumeForm extends Component {
     constructor(props){
@@ -12,13 +14,20 @@ class ResumeForm extends Component {
         this.state = { 
            resumeInfo: {
               completed: false
-           }
+           },
+           numWorkSections: 1,
+           numEducationSections: 1
+         
         }
-
+        
         this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this)
+        this.onSubmit = this.onSubmit.bind(this);
+        this.addWork = this.addWork.bind(this);
+        this.deleteWork = this.deleteWork.bind(this);
+        this.addEducation = this.addEducation.bind(this);
+        this.deleteEducation = this.deleteEducation.bind(this);
     }
-
+    nextId = nextId();
     onChange(e){
         this.setState({
             [e.target.name] : e.target.value
@@ -33,11 +42,46 @@ class ResumeForm extends Component {
                 completed: true
             }
         })
-        console.log(' Submit was attempted ')
+    }
+
+    addWork(e) {
+        e.preventDefault();
+        this.setState({
+            numWorkSections: this.state.numWorkSections + 1
+        })
+    }
+
+    deleteWork(e){
+        e.preventDefault();
+        this.setState({
+            numWorkSections: this.state.numWorkSections - 1
+        })
+    }
+
+    addEducation(e){
+        e.preventDefault();
+        this.setState({
+            numEducationSections: this.state.numEducationSections + 1
+        })
+    }
+
+    deleteEducation(e){
+        e.preventDefault();
+        this.setState({
+            numEducationSections: this.state.numEducationSections - 1
+        })
     }
 
     render(){
-        const { resumeInfo } = this.state
+        const addWorkChildren  = [];
+        const addEducationChildren = [];
+        const { resumeInfo, numWorkSections, numEducationSections } = this.state
+        for (var i = 0; i < numWorkSections; i += 1){
+            addWorkChildren.push(<WorkExperience id={nextId} onChange={this.onChange} />)
+        }
+        for (var x = 0; x < numEducationSections; x += 1){
+            addEducationChildren.push(<Education onChange={this.onChange} />)
+        }
         if(resumeInfo.completed === true){
            return(<CompletedResume resumeInfo={resumeInfo} {...this.state} />)
         } else {
@@ -47,10 +91,16 @@ class ResumeForm extends Component {
                     <h2 className="ui large header">Personal Information</h2>
                     <GeneralInfo resumeInfo={resumeInfo} onChange={this.onChange}/>
                     <h2 className="ui large header">Work Experience</h2>
-                    <WorkExperience onChange={this.onChange} />
+                        {addWorkChildren}
+                    <Button onClick={this.addWork} sectionTitle='Add Work Experience' />
+                    <Button onClick={this.deleteWork} sectionTitle='Delete Work Experience' />
                     <h2 className="ui large header">Education</h2>
-                    <Education onChange={this.onChange} />
-                    <Button />
+                        {addEducationChildren}
+                    <Button onClick={this.addEducation} sectionTitle='Add Work Experience' />
+                    <Button onClick={this.deleteEducation} sectionTitle='Delete Work Experience' />
+                    <br />
+                    <br />
+                    <Button onClick={this.onSubmit} sectionTitle='Submit' />
                 </form>
             </div>
         )
