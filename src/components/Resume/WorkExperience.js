@@ -49,6 +49,16 @@ class WorkExperience extends Component {
                         name='jobTitle'/>
                     </label>
                 </div>
+                <div className="field">
+                    <label htmlFor=""> 
+                        <textarea
+                             onChange={this.props.onChange}
+                             value={this.props.jobDesc}
+                             name='jobDesc'
+                            placeholder='Please add responsibilities and achievements here'
+                        ></textarea>
+                    </label>
+                </div>
             </div>
             
         )

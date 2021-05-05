@@ -28,8 +28,8 @@ class CompletedResume extends Component {
                             <p>{this.props.endDate}</p>
                         </div>
                         </div>
-                    <p>{this.props.jobTitle}</p>
-
+                    <p className='jobTitle'>{this.props.jobTitle}</p>
+                    <p>{this.props.jobDesc}</p>
                     
                     
                 </div>

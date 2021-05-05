@@ -1,13 +1,10 @@
 .CompletedResume {
-	width: 70%;
+	width: 60%;
 	background: #fff;
 	margin: 40px auto;
 	font-family: "EB Garamond", serif;
 }
 
-body {
-	background-color: lightblue;
-}
 .effect {
 	position: relative;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -46,6 +43,11 @@ body {
 	font-weight: 800;
 }
 
+.jobTitle {
+	font-style: italic;
+	font-size: 0.8em;
+}
+
 hr {
 	border: 1px solid black;
 }
@@ -63,5 +65,5 @@ hr {
 	text-align: right;
 	position: absolute;
 	right: 0em;
-	left: 35em;
+	left: 20em;
 }

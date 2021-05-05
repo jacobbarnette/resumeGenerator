@@ -5,6 +5,7 @@ import WorkExperience from './WorkExperience'
 import Education from './Education'
 import Button from './Button'
 import CompletedResume from './CompletedResume'
+import '../styles/ResumeForm.css';
 
 
 class ResumeForm extends Component {
@@ -17,7 +18,7 @@ class ResumeForm extends Component {
            },
            numWorkSections: 1,
            numEducationSections: 1
-         
+           
         }
         
         this.onChange = this.onChange.bind(this);
@@ -96,8 +97,8 @@ class ResumeForm extends Component {
                     <Button onClick={this.deleteWork} sectionTitle='Delete Work Experience' />
                     <h2 className="ui large header">Education</h2>
                         {addEducationChildren}
-                    <Button onClick={this.addEducation} sectionTitle='Add Work Experience' />
-                    <Button onClick={this.deleteEducation} sectionTitle='Delete Work Experience' />
+                    <Button onClick={this.addEducation} sectionTitle='Add Education' />
+                    <Button onClick={this.deleteEducation} sectionTitle='Delete Education' />
                     <br />
                     <br />
                     <Button onClick={this.onSubmit} sectionTitle='Submit' />
